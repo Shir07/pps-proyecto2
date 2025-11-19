@@ -1,0 +1,353 @@
+:root{
+    --rojo: #AC0505;
+    --gris-fondo: #ECF0F1;
+    --gris-input: #FFFFFF;
+    --sombra: rgba(0, 0, 0, 0.18);
+}
+
+/*body*/
+#body {
+    font-family: "Poppins", sans-serif;
+    background: var(--gris-fondo);
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*icono home*/
+#icono-home {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    transition: 0.2s ease;
+}
+#icono-home img {
+    width: 80px;
+    height: 80px;
+}
+#icono-home:hover {
+    transform: scale(1.05);
+}
+
+/*main*/
+#main-registro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-registro {
+    width: 380px;
+
+}
+
+/*Formulario*/
+#form-registro {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem; 
+    width: 100%;
+}
+
+/* Inputs ocupan todo el ancho del card */
+#form-registro input {
+    width: 100% !important;
+}
+
+#card-registro {
+    max-width: 550px !important; 
+    width: 100%;
+    padding:2.5rem; 
+    margin: 0 auto;
+    background: var(--gris-fondo); 
+}
+
+/*inputs*/
+.sombra-input {
+    background: var(--gris-input);
+    border: none;
+    padding: 1.2rem 1.5rem;
+    border-radius: 15px;
+    font-size: 20px; 
+    outline: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.sombra-input::placeholder {
+    color: #777;
+    font-weight: 500;
+}
+
+/*Botones*/
+.btn-rojo {
+    background: var(--rojo);
+    color: white;
+    padding: 1.2rem;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transition: 0.25s ease;
+    margin-top: 0.5rem; 
+}
+.btn-rojo:hover {
+    transform: translateY(-3px);
+    background: #920303;
+}
+
+.btn-borde {
+    padding: 1.2rem;
+    border-radius: 15px;
+    border: 2px solid var(--rojo);
+    background: transparent;
+    font-size: 18px;
+    color: var(--rojo);
+    transition: 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}
+.btn-borde:hover {
+    background: var(--rojo);
+    color: white;
+}
+
+
+#ya-tienes-cuenta {
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; 
+}
+#ya-tienes-cuenta a {
+    color: var(--rojo);
+    font-weight: 600;
+}
+
+#btn-iniciar-sesion {
+    display: block;
+    width: 100%;
+    max-width: 180px; 
+    margin: 0 auto; 
+}
+
+/*footer*/
+#footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 15px;
+}
+
+#social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 22px;
+}
+
+#contacto {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/*logo*/
+#logo-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0; 
+    position: relative;
+    height: 60px; 
+    line-height: 60px; 
+    overflow: hidden; 
+}
+
+#logo-placeholder {
+    color: #777; 
+    font-weight: 500;
+    font-size: 20px;
+    padding-left: 1.5rem; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    flex-grow: 1; 
+}
+
+.btn-subir-logo-v2 {
+    background: var(--rojo);
+    color: white;
+    padding: 0 1.5rem;
+    height: 100%; 
+    border: none;
+    border-radius: 0 15px 15px 0; 
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none; 
+    transition: filter 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-subir-logo-v2:hover {
+    filter: brightness(1.05);
+}
+
+/*MODAL*/
+.modal-overlay {
+    /* Oculto por defecto */
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(2px);
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--gris-input);
+    margin: 15% auto; 
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%; 
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.3s;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+#modal-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--rojo);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 30px;
+    font-weight: 300;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.modal-close:hover {
+    color: #555;
+}
+
+#modal-mensaje {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.modal-footer {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.modal-footer .btn-rojo {
+    padding: 0.8rem 2rem;
+    font-size: 18px;
+    margin-top: 0; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Clases para estados */
+.modal-success #modal-titulo {
+    color: #28a745; 
+}
+
+.modal-error #modal-titulo {
+    color: #dc3545; 
+}
+
+/*Responsive*/
+@media (max-width: 992px) {
+    #card-registro {
+        max-width: 500px !important;
+        padding: 2.5rem;
+    }
+    #logo-registro {
+        width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    #card-registro {
+        width: 95%;
+        padding: 1.5rem;
+        max-width: 100% !important;
+    }
+    #logo-registro {
+        width: 220px;
+        margin-top: 4rem; 
+    }
+    #icono-home img {
+        width: 45px;
+        height: 45px;
+    }
+    #logo-input-container {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+        border-radius: 15px;
+        line-height: normal;
+    }
+
+    #logo-placeholder {
+        padding: 1rem 1.5rem;
+        line-height: normal;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .btn-subir-logo-v2 {
+        width: 100%;
+        height: 50px;
+        border-radius: 0 0 15px 15px;
+        padding: 0.8rem 1.5rem;
+        justify-content: center;
+    }
+    #btn-iniciar-sesion {
+        max-width: 100%;
+    }
+    
+    /* Ajuste responsive para el modal */
+    .modal-content {
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+    #modal-titulo {
+        font-size: 20px;
+    }
+    #modal-mensaje {
+        font-size: 16px;
+    }
+}
